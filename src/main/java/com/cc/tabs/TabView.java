@@ -30,4 +30,21 @@ public class TabView {
     public void setController(SimpleViewController controller) {
         this.controller = controller;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof TabView)) return false;
+
+        TabView tabView = (TabView) o;
+
+        if (name != null ? !name.equals(tabView.name) : tabView.name != null) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return name != null ? name.hashCode() : 0;
+    }
 }
